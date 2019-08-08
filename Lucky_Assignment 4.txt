@@ -1,0 +1,39 @@
+
+public class lucky_Number {
+	 static boolean isLucky(int n) 
+	    { 
+	    
+	        boolean arr[]=new boolean[10]; 
+	        for (int i = 0; i < 10; i++) 
+	            arr[i] = false; 
+	        while (n > 0) 
+	        { 
+	 
+	            int digit = n % 10; 
+	      
+	  
+	            if (arr[digit]) 
+	            return false; 
+	      
+	            // Mark this digit as seen 
+	            arr[digit] = true; 
+	      
+	            // Remove the last digit from number 
+	            n = n / 10; 
+	        } 
+	        return true; 
+	    } 
+	 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int arr[] = {1232, 80, 700,1234567890,1337}; 
+        int n = arr.length; 
+      
+        for (int i = 0; i < n; i++) 
+            if(isLucky(arr[i])) 
+                System.out.print(arr[i] + " YES \n"); 
+            else
+            System.out.print(arr[i] + " NO \n"); 
+    } 
+	}
